@@ -7,7 +7,7 @@ function App() {
 
   const fetchData = async (): Promise<Item[]> => {
     const response = await fetch(
-      "https://g63a17579e548ca-teamqueso.adb.eu-madrid-1.oraclecloudapps.com/ords/admin/capuchin_pop_survey_2015/"
+      "https://g63a17579e548ca-teamqueso.adb.eu-madrid-1.oraclecloudapps.com/ords/usuariogeneral/agua/"
     );
 
     if (!response.ok) {
