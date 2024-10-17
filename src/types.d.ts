@@ -8,38 +8,38 @@ export interface DatabaseResponse {
 }
 
 export interface Item {
-  codigo:        number;
-  nombre:        string;
-  embalse:       string;
-  x:             number;
-  y:             number;
-  demarc:        Demarc;
-  cauce:         string;
-  google:        null | string;
-  openstreetmap: null | string;
-  wikidata:      null | string;
-  provincia:     string;
-  ccaa:          Ccaa;
-  tipo:          string;
-  cota_coron:    null | string;
-  alt_cimien:    null | string;
-  informe:       string;
-}
-
-export enum Ccaa {
-  CastillaLaMancha = "Castilla - La Mancha",
-  CastillaYLeón = "Castilla y León",
-  ComunidadDeMadrid = "Comunidad de Madrid",
-  Extremadura = "Extremadura",
-}
-
-export enum Demarc {
-  Duero = "DUERO",
-  Guadiana = "GUADIANA",
-  Tajo = "TAJO",
+  codigo:         number;
+  embalse:        string;
+  x:              number;
+  y:              number;
+  demarc:         string;
+  cauce:          string;
+  google:         null | string;
+  openstreetmap:  null;
+  wikidata:       null | string;
+  provincia:      string;
+  ccaa:           string;
+  tipo:           string;
+  cota_coron:     null | string;
+  alt_cimien:     null | string;
+  informe:        string;
+  id:             number;
+  ambito_nombre:  string;
+  embalse_nombre: string;
+  agua_total:     number;
+  electrico_flag: number;
+  links:          Link[];
 }
 
 export interface Link {
-  rel:  string;
+  rel:  Rel;
   href: string;
+}
+
+export enum Rel {
+  Describedby = "describedby",
+  Edit = "edit",
+  First = "first",
+  Next = "next",
+  Self = "self",
 }
