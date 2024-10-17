@@ -3,9 +3,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/header';
 import Home from './pages/Home';
-import SearchByDistance from './pages/SearchByDistance';
+import SearchByDistance from './pages/Distance';
 import SearchReservoir from './pages/Sort';
-import SubmitData from './pages/SearchByDistance';
 
 
 
@@ -17,7 +16,6 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/distance-search" element={<SearchByDistance />} />
         <Route path="/reservoir-search" element={<SearchReservoir />} />
-        <Route path="/submit-data" element={<SubmitData />} />
       </Routes>
     </Router>
   );
