@@ -23,16 +23,16 @@ function App() {
       .then((result) => setData(result))
       .catch((error) => console.error("Error al obtener los datos:", error));
   }, []);
-
+  
   return (
-    <div className="App">
+    /*<div className="App">
       <h2>Survey Data</h2>
       {data.length > 0 ? (
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Latitude</th>
+              <th>Fecha</th>
+              <th>Agua_A</th>
               <th>Longitude</th>
               <th>Transect #</th>
               <th>Start Time</th>
@@ -71,6 +71,46 @@ function App() {
       ) : (
         <p>Loading data...</p>
       )}
+    </div>*/
+    <div className="App">
+      <body>
+        <header>
+          <h1>Embalses</h1>
+        </header>
+        <main>
+        <section id="search-section">
+            <h2>Buscar Embalses de Agua</h2>
+            <form id="search-form">
+                <label htmlFor="search-query">Introduce el nombre del embalse:</label>
+                <input type="text" id="search-query" name="search-query" placeholder="Embalse..." required></input>
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+        <section id="data-entry-section">
+            <h2>Submit Water Deposit Data</h2>
+            <form id="data-entry-form">
+                <label htmlFor="deposit-name">Deposit Name:</label>
+                <input type="text" id="deposit-name" name="deposit-name" required></input>
+                
+                <label htmlFor="location">Location:</label>
+                <input type="text" id="location" name="location" required></input>
+                
+                <label htmlFor="capacity">Capacity (in cubic meters):</label>
+                <input type="number" id="capacity" name="capacity" required></input>
+                
+                <label htmlFor="condition">Condition:</label>
+                <select id="condition" name="condition" required>
+                    <option value="">Select...</option>
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                    <option value="poor">Poor</option>
+                </select>
+                
+                <button type="submit">Submit Data</button>
+            </form>
+        </section>
+        </main>
+      </body>
     </div>
   );
 }
