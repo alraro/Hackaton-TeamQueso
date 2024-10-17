@@ -7,7 +7,7 @@ function App() {
 
   const fetchData = async (): Promise<Item[]> => {
     const response = await fetch(
-      "https://g63a17579e548ca-teamqueso.adb.eu-madrid-1.oraclecloudapps.com/ords/admin/capuchin_pop_survey_2015/"
+      "https://g63a17579e548ca-teamqueso.adb.eu-madrid-1.oraclecloudapps.com/ords/usuariogeneral/agua/"
     );
 
     if (!response.ok) {
@@ -23,16 +23,16 @@ function App() {
       .then((result) => setData(result))
       .catch((error) => console.error("Error al obtener los datos:", error));
   }, []);
-
+  
   return (
-    <div className="App">
+    /*<div className="App">
       <h2>Survey Data</h2>
       {data.length > 0 ? (
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Latitude</th>
+              <th>Fecha</th>
+              <th>Agua_A</th>
               <th>Longitude</th>
               <th>Transect #</th>
               <th>Start Time</th>
@@ -71,6 +71,23 @@ function App() {
       ) : (
         <p>Loading data...</p>
       )}
+    </div>*/
+    <div className="App">
+      <body>
+        <header>
+          <h1>Embalses</h1>
+        </header>
+        <main>
+        <section id="search-section">
+            <h2>Buscar Embalses de Agua</h2>
+            <form id="search-form">
+                <label htmlFor="search-query">Introduce el nombre del embalse:</label>
+                <input type="text" id="search-query" name="search-query" placeholder="Embalse..." required></input>
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+        </main>
+      </body>
     </div>
   );
 }
